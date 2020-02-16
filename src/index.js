@@ -8,12 +8,13 @@ import striptags from 'striptags';
 export async function getSubtitles({
   videoID,
   lang = 'en',
+  proxyUrl = '',
 }: {
   videoID: string,
   lang: 'en' | 'de' | 'fr' | void,
 }) {
   const { data } = await axios.get(
-    `https://youtube.com/get_video_info?video_id=${videoID}`
+    `${proxyUrl}https://youtube.com/get_video_info?video_id=${videoID}`
   );
 
   const decodedData = decodeURIComponent(data);
