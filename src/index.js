@@ -12,6 +12,7 @@ export async function getSubtitles({
 }: {
   videoID: string,
   lang: 'en' | 'de' | 'fr' | void,
+  proxyUrl: string,
 }) {
   const { data } = await axios.get(
     `${proxyUrl}https://youtube.com/get_video_info?video_id=${videoID}`
